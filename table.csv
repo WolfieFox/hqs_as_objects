@@ -1,0 +1,86 @@
+name,id,numeric_id,template,size,class,base_sprite,colour
+HQ Level 0,hq_poor_cc,100,hq,,HDQ0,2603,
+HQ Level 0 (Dark Blue),hq_poor_db,101,hq,,HDQ0,2603,COLOUR_DARK_BLUE
+HQ Level 0 (Pale Green),hq_poor_pg,102,hq,,HDQ0,2603,COLOUR_PALE_GREEN
+HQ Level 0 (Pink),hq_poor_pi,103,hq,,HDQ0,2603,COLOUR_PINK
+HQ Level 0 (Yellow),hq_poor_Y,104,hq,,HDQ0,2603,COLOUR_YELLOW
+HQ Level 0 (Red),hq_poor_r,105,hq,,HDQ0,2603,COLOUR_RED
+HQ Level 0 (Light Blue),hq_poor_lb,106,hq,,HDQ0,2603,COLOUR_LIGHT_BLUE
+HQ Level 0 (Green),hq_poor_g,107,hq,,HDQ0,2603,COLOUR_GREEN
+HQ Level 0 (Dark Green),hq_poor_dg,108,hq,,HDQ0,2603,COLOUR_DARK_GREEN
+HQ Level 0 (Blue),hq_poor_bl,109,hq,,HDQ0,2603,COLOUR_BLUE
+HQ Level 0 (Cream),hq_poor_c,110,hq,,HDQ0,2603,COLOUR_CREAM
+HQ Level 0 (Mauve),hq_poor_m,111,hq,,HDQ0,2603,COLOUR_MAUVE
+HQ Level 0 (Purple),hq_poor_pr,112,hq,,HDQ0,2603,COLOUR_PURPLE
+HQ Level 0 (Orange),hq_poor_o,113,hq,,HDQ0,2603,COLOUR_ORANGE
+HQ Level 0 (Brown),hq_poor_br,114,hq,,HDQ0,2603,COLOUR_BROWN
+HQ Level 0 (Grey),hq_poor_gy,115,hq,,HDQ0,2603,COLOUR_GREY
+HQ Level 0 (White),hq_poor_w,116,hq,,HDQ0,2603,COLOUR_WHITE
+HQ Level 1,hq_tiny_cc,200,hq,,HDQ1,2607,
+HQ Level 1 (Dark Blue),hq_tiny_db,201,hq,,HDQ1,2607,COLOUR_DARK_BLUE
+HQ Level 1 (Pale Green),hq_tiny_pg,202,hq,,HDQ1,2607,COLOUR_PALE_GREEN
+HQ Level 1 (Pink),hq_tiny_pi,203,hq,,HDQ1,2607,COLOUR_PINK
+HQ Level 1 (Yellow),hq_tiny_Y,204,hq,,HDQ1,2607,COLOUR_YELLOW
+HQ Level 1 (Red),hq_tiny_r,205,hq,,HDQ1,2607,COLOUR_RED
+HQ Level 1 (Light Blue),hq_tiny_lb,206,hq,,HDQ1,2607,COLOUR_LIGHT_BLUE
+HQ Level 1 (Green),hq_tiny_g,207,hq,,HDQ1,2607,COLOUR_GREEN
+HQ Level 1 (Dark Green),hq_tiny_dg,208,hq,,HDQ1,2607,COLOUR_DARK_GREEN
+HQ Level 1 (Blue),hq_tiny_bl,209,hq,,HDQ1,2607,COLOUR_BLUE
+HQ Level 1 (Cream),hq_tiny_c,210,hq,,HDQ1,2607,COLOUR_CREAM
+HQ Level 1 (Mauve),hq_tiny_m,211,hq,,HDQ1,2607,COLOUR_MAUVE
+HQ Level 1 (Purple),hq_tiny_pr,212,hq,,HDQ1,2607,COLOUR_PURPLE
+HQ Level 1 (Orange),hq_tiny_o,213,hq,,HDQ1,2607,COLOUR_ORANGE
+HQ Level 1 (Brown),hq_tiny_br,214,hq,,HDQ1,2607,COLOUR_BROWN
+HQ Level 1 (Grey),hq_tiny_gy,215,hq,,HDQ1,2607,COLOUR_GREY
+HQ Level 1 (White),hq_tiny_w,216,hq,,HDQ1,2607,COLOUR_WHITE
+HQ Level 2,hq_medium_cc,300,hq,med,HDQ2,2611,
+HQ Level 2 (Dark Blue),hq_medium_db,301,hq,med,HDQ2,2611,COLOUR_DARK_BLUE
+HQ Level 2 (Pale Green),hq_medium_pg,302,hq,med,HDQ2,2611,COLOUR_PALE_GREEN
+HQ Level 2 (Pink),hq_medium_pi,303,hq,med,HDQ2,2611,COLOUR_PINK
+HQ Level 2 (Yellow),hq_medium_Y,304,hq,med,HDQ2,2611,COLOUR_YELLOW
+HQ Level 2 (Red),hq_medium_r,305,hq,med,HDQ2,2611,COLOUR_RED
+HQ Level 2 (Light Blue),hq_medium_lb,306,hq,med,HDQ2,2611,COLOUR_LIGHT_BLUE
+HQ Level 2 (Green),hq_medium_g,307,hq,med,HDQ2,2611,COLOUR_GREEN
+HQ Level 2 (Dark Green),hq_medium_dg,308,hq,med,HDQ2,2611,COLOUR_DARK_GREEN
+HQ Level 2 (Blue),hq_medium_bl,309,hq,med,HDQ2,2611,COLOUR_BLUE
+HQ Level 2 (Cream),hq_medium_c,310,hq,med,HDQ2,2611,COLOUR_CREAM
+HQ Level 2 (Mauve),hq_medium_m,311,hq,med,HDQ2,2611,COLOUR_MAUVE
+HQ Level 2 (Purple),hq_medium_pr,312,hq,med,HDQ2,2611,COLOUR_PURPLE
+HQ Level 2 (Orange),hq_medium_o,313,hq,med,HDQ2,2611,COLOUR_ORANGE
+HQ Level 2 (Brown),hq_medium_br,314,hq,med,HDQ2,2611,COLOUR_BROWN
+HQ Level 2 (Grey),hq_medium_gy,315,hq,med,HDQ2,2611,COLOUR_GREY
+HQ Level 2 (White),hq_medium_w,316,hq,med,HDQ2,2611,COLOUR_WHITE
+HQ Level 3,hq_large_cc,400,hq,lg,HDQ3,2618,
+HQ Level 3 (Dark Blue),hq_large_db,401,hq,lg,HDQ3,2618,COLOUR_DARK_BLUE
+HQ Level 3 (Pale Green),hq_large_pg,402,hq,lg,HDQ3,2618,COLOUR_PALE_GREEN
+HQ Level 3 (Pink),hq_large_pi,403,hq,lg,HDQ3,2618,COLOUR_PINK
+HQ Level 3 (Yellow),hq_large_Y,404,hq,lg,HDQ3,2618,COLOUR_YELLOW
+HQ Level 3 (Red),hq_large_r,405,hq,lg,HDQ3,2618,COLOUR_RED
+HQ Level 3 (Light Blue),hq_large_lb,406,hq,lg,HDQ3,2618,COLOUR_LIGHT_BLUE
+HQ Level 3 (Green),hq_large_g,407,hq,lg,HDQ3,2618,COLOUR_GREEN
+HQ Level 3 (Dark Green),hq_large_dg,408,hq,lg,HDQ3,2618,COLOUR_DARK_GREEN
+HQ Level 3 (Blue),hq_large_bl,409,hq,lg,HDQ3,2618,COLOUR_BLUE
+HQ Level 3 (Cream),hq_large_c,410,hq,lg,HDQ3,2618,COLOUR_CREAM
+HQ Level 3 (Mauve),hq_large_m,411,hq,lg,HDQ3,2618,COLOUR_MAUVE
+HQ Level 3 (Purple),hq_large_pr,412,hq,lg,HDQ3,2618,COLOUR_PURPLE
+HQ Level 3 (Orange),hq_large_o,413,hq,lg,HDQ3,2618,COLOUR_ORANGE
+HQ Level 3 (Brown),hq_large_br,414,hq,lg,HDQ3,2618,COLOUR_BROWN
+HQ Level 3 (Grey),hq_large_gy,415,hq,lg,HDQ3,2618,COLOUR_GREY
+HQ Level 3 (White),hq_large_w,416,hq,lg,HDQ3,2618,COLOUR_WHITE
+HQ Level 4,hq_huge_cc,500,hq,xl,HDQ4,2625,
+HQ Level 4 (Dark Blue),hq_huge_db,501,hq,xl,HDQ4,2625,COLOUR_DARK_BLUE
+HQ Level 4 (Pale Green),hq_huge_pg,502,hq,xl,HDQ4,2625,COLOUR_PALE_GREEN
+HQ Level 4 (Pink),hq_huge_pi,503,hq,xl,HDQ4,2625,COLOUR_PINK
+HQ Level 4 (Yellow),hq_huge_Y,504,hq,xl,HDQ4,2625,COLOUR_YELLOW
+HQ Level 4 (Red),hq_huge_r,505,hq,xl,HDQ4,2625,COLOUR_RED
+HQ Level 4 (Light Blue),hq_huge_lb,506,hq,xl,HDQ4,2625,COLOUR_LIGHT_BLUE
+HQ Level 4 (Green),hq_huge_g,507,hq,xl,HDQ4,2625,COLOUR_GREEN
+HQ Level 4 (Dark Green),hq_huge_dg,508,hq,xl,HDQ4,2625,COLOUR_DARK_GREEN
+HQ Level 4 (Blue),hq_huge_bl,509,hq,xl,HDQ4,2625,COLOUR_BLUE
+HQ Level 4 (Cream),hq_huge_c,510,hq,xl,HDQ4,2625,COLOUR_CREAM
+HQ Level 4 (Mauve),hq_huge_m,511,hq,xl,HDQ4,2625,COLOUR_MAUVE
+HQ Level 4 (Purple),hq_huge_pr,512,hq,xl,HDQ4,2625,COLOUR_PURPLE
+HQ Level 4 (Orange),hq_huge_o,513,hq,xl,HDQ4,2625,COLOUR_ORANGE
+HQ Level 4 (Brown),hq_huge_br,514,hq,xl,HDQ4,2625,COLOUR_BROWN
+HQ Level 4 (Grey),hq_huge_gy,515,hq,xl,HDQ4,2625,COLOUR_GREY
+HQ Level 4 (White),hq_huge_w,516,hq,xl,HDQ4,2625,COLOUR_WHITE

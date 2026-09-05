@@ -1,0 +1,7 @@
+.idea
+*.grf
+*.tar
+
+deploy*.sh
+deploy*.bat
+/hq_as_objects/*

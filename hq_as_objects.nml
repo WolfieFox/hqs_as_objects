@@ -1,0 +1,2595 @@
+grf {
+  grfid:                  "WFY\48";
+  name:                   string(STR_GRF_NAME);
+  desc:                   string(STR_GRF_DESCRIPTION);
+  url:                    string(STR_GRF_URL);
+  version:                94;
+  min_compatible_version: 0;
+}
+
+
+spritelayout sprite_hq_n {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+	building {
+        sprite: LOAD_TEMP(0) + 0;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+	}
+}
+
+spritelayout sprite_hq_e {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+	building {
+        sprite: LOAD_TEMP(0) + 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+	}
+}
+
+spritelayout sprite_hq_s {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+	building {
+        sprite: LOAD_TEMP(0) + 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+	}
+}
+
+spritelayout sprite_hq_w {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+	building {
+        sprite: LOAD_TEMP(0) + 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+	}
+}
+
+spritelayout sprite_hq_purchase {
+	building {
+        sprite: LOAD_TEMP(0) + 0;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: -8;
+        yoffset: -8;
+	}
+	childsprite {
+        sprite: LOAD_TEMP(0) + 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 32;
+        yoffset: 32;
+    }
+	childsprite {
+        sprite: LOAD_TEMP(0) + 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 0;
+        yoffset: 16;
+    }
+	childsprite {
+        sprite: LOAD_TEMP(0) + 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 64;
+        yoffset: 16;
+    }
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_tiles, relative_y + (relative_x * 2)) {
+    0: sprite_hq_n;
+    1: sprite_hq_e;
+    2: sprite_hq_w;
+    3: sprite_hq_s;
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    graphics_hq_tiles;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    sprite_hq_purchase;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_cc, sprite_index, [STORE_TEMP(sprite_index, 0), STORE_TEMP(PALETTE_USE_DEFAULT, 1)]) {
+    sprite_hq_purchase;
+}
+
+
+spritelayout sprite_hq_med_n {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 0; //1611
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 1; //1612
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 32;
+    }
+}
+
+spritelayout sprite_hq_med_e {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 2; //1613
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 3; //1614
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 32;
+    }
+}
+
+spritelayout sprite_hq_med_s {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 6; //1617
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_med_w {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 4; //1615
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 5; //1617
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 32;
+    }
+}
+
+spritelayout sprite_hq_med_purchase {
+    building {
+        sprite: LOAD_TEMP(0) + 0; //North
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: -8;
+        yoffset: -8;
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 1; //North Wall
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 32;
+        yoffset: 0;
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 4; //West
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 0;
+        yoffset: 16;
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 5; //West
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 0;
+        yoffset: 16;
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 2; //East
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 64;
+        yoffset: 16;
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 3; //East Wall
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 64;
+        yoffset: 16;
+    }
+    childsprite {
+        sprite: LOAD_TEMP(0) + 6; //South
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 32;
+        yoffset: 32;
+    }
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_med_tiles, relative_y + (relative_x * 2)) {
+    0: sprite_hq_med_n;
+    1: sprite_hq_med_e;
+    2: sprite_hq_med_w;
+    3: sprite_hq_med_s;
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_med, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    graphics_hq_med_tiles;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_med, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    sprite_hq_med_purchase;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_med_cc, sprite_index, [STORE_TEMP(sprite_index, 0), STORE_TEMP(PALETTE_USE_DEFAULT, 1)]) {
+    sprite_hq_med_purchase;
+}
+
+spritelayout sprite_hq_lg_n {
+    ground {
+        sprite: LOAD_TEMP(0) + 0;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_lg_e {
+    ground {
+        sprite: LOAD_TEMP(0) + 2;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 3;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_lg_s {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 6;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_lg_w {
+    ground {
+        sprite: LOAD_TEMP(0) + 4;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 5;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_lg_purchase {
+    building {
+        sprite: LOAD_TEMP(0) + 0; //N Ground
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: -4;
+        yoffset: -4;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 1; //N Build
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: -4;
+        yoffset: -4;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 4; // W Ground
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 12;
+        yoffset: -4;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 5; // W Build
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 12;
+        yoffset: -4;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 2; // E Ground
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: -4;
+        yoffset: 12;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 3; // E Build
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: -4;
+        yoffset: 12;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 6; // South
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 12;
+        yoffset: 12;
+    }
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_lg_tiles, relative_y + (relative_x * 2)) {
+    0: sprite_hq_lg_n;
+    1: sprite_hq_lg_e;
+    2: sprite_hq_lg_w;
+    3: sprite_hq_lg_s;
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_lg, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    graphics_hq_lg_tiles;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_lg, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    sprite_hq_lg_purchase;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_lg_cc, sprite_index, [STORE_TEMP(sprite_index, 0), STORE_TEMP(PALETTE_USE_DEFAULT, 1)]) {
+    sprite_hq_lg_purchase;
+}
+
+
+spritelayout sprite_hq_xl_n {
+    ground {
+        sprite: LOAD_TEMP(0) + 0;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 1;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_xl_e {
+    ground {
+            sprite: LOAD_TEMP(0) + 2;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: LOAD_TEMP(1);
+        }
+        building {
+            sprite: LOAD_TEMP(0) + 3;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: LOAD_TEMP(1);
+        }
+}
+
+spritelayout sprite_hq_xl_s {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 6;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+}
+
+spritelayout sprite_hq_xl_w {
+    ground {
+            sprite: LOAD_TEMP(0) + 4;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: LOAD_TEMP(1);
+        }
+        building {
+            sprite: LOAD_TEMP(0) + 5;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: LOAD_TEMP(1);
+        }
+}
+
+spritelayout sprite_hq_xl_purchase {
+    building {
+        sprite: LOAD_TEMP(0) + 0; //N Ground
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 1; //N Build
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 4; // W Ground
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 16;
+        yoffset: 0;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 5; // W Build
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 16;
+        yoffset: 0;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 2; // E Ground
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 0;
+        yoffset: 16;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 3; // E Build
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 0;
+        yoffset: 16;
+    }
+    building {
+        sprite: LOAD_TEMP(0) + 6; // South
+        recolour_mode: RECOLOUR_REMAP;
+        palette: LOAD_TEMP(1);
+        xoffset: 16;
+        yoffset: 16;
+    }
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_xl_tiles, relative_y + (relative_x * 2)) {
+    0: sprite_hq_xl_n;
+    1: sprite_hq_xl_e;
+    2: sprite_hq_xl_w;
+    3: sprite_hq_xl_s;
+}
+
+switch (FEAT_OBJECTS, SELF, graphics_hq_xl, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    graphics_hq_xl_tiles;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_xl, sprite_index, desired_colour, [STORE_TEMP(sprite_index, 0), STORE_TEMP(palette_1cc(desired_colour), 1)]) {
+    sprite_hq_xl_purchase;
+}
+
+switch (FEAT_OBJECTS, SELF, purchase_hq_xl_cc, sprite_index, [STORE_TEMP(sprite_index, 0), STORE_TEMP(PALETTE_USE_DEFAULT, 1)]) {
+    sprite_hq_xl_purchase;
+}item(FEAT_OBJECTS, hq_poor_cc, 100) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_CC);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, colour);
+        purchase: purchase_hq_cc(2603);
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_db, 101) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_DB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_DARK_BLUE);
+        purchase: purchase_hq(2603, COLOUR_DARK_BLUE);
+        colour: return COLOUR_DARK_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_pg, 102) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_PG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_PALE_GREEN);
+        purchase: purchase_hq(2603, COLOUR_PALE_GREEN);
+        colour: return COLOUR_PALE_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_pi, 103) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_PI);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_PINK);
+        purchase: purchase_hq(2603, COLOUR_PINK);
+        colour: return COLOUR_PINK;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_Y, 104) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_Y);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_YELLOW);
+        purchase: purchase_hq(2603, COLOUR_YELLOW);
+        colour: return COLOUR_YELLOW;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_r, 105) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_R);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_RED);
+        purchase: purchase_hq(2603, COLOUR_RED);
+        colour: return COLOUR_RED;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_lb, 106) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_LB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_LIGHT_BLUE);
+        purchase: purchase_hq(2603, COLOUR_LIGHT_BLUE);
+        colour: return COLOUR_LIGHT_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_g, 107) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_G);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_GREEN);
+        purchase: purchase_hq(2603, COLOUR_GREEN);
+        colour: return COLOUR_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_dg, 108) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_DG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_DARK_GREEN);
+        purchase: purchase_hq(2603, COLOUR_DARK_GREEN);
+        colour: return COLOUR_DARK_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_bl, 109) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_BL);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_BLUE);
+        purchase: purchase_hq(2603, COLOUR_BLUE);
+        colour: return COLOUR_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_c, 110) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_C);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_CREAM);
+        purchase: purchase_hq(2603, COLOUR_CREAM);
+        colour: return COLOUR_CREAM;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_m, 111) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_M);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_MAUVE);
+        purchase: purchase_hq(2603, COLOUR_MAUVE);
+        colour: return COLOUR_MAUVE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_pr, 112) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_PR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_PURPLE);
+        purchase: purchase_hq(2603, COLOUR_PURPLE);
+        colour: return COLOUR_PURPLE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_o, 113) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_O);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_ORANGE);
+        purchase: purchase_hq(2603, COLOUR_ORANGE);
+        colour: return COLOUR_ORANGE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_br, 114) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_BR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_BROWN);
+        purchase: purchase_hq(2603, COLOUR_BROWN);
+        colour: return COLOUR_BROWN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_gy, 115) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_GY);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_GREY);
+        purchase: purchase_hq(2603, COLOUR_GREY);
+        colour: return COLOUR_GREY;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_poor_w, 116) {
+    property {
+        class:                  "HDQ0";
+        classname:              string(STR_HDQ0);
+        name:                   string(STR_NAME_HQ_POOR_W);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2603, COLOUR_WHITE);
+        purchase: purchase_hq(2603, COLOUR_WHITE);
+        colour: return COLOUR_WHITE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_cc, 200) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_CC);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, colour);
+        purchase: purchase_hq_cc(2607);
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_db, 201) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_DB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_DARK_BLUE);
+        purchase: purchase_hq(2607, COLOUR_DARK_BLUE);
+        colour: return COLOUR_DARK_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_pg, 202) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_PG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_PALE_GREEN);
+        purchase: purchase_hq(2607, COLOUR_PALE_GREEN);
+        colour: return COLOUR_PALE_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_pi, 203) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_PI);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_PINK);
+        purchase: purchase_hq(2607, COLOUR_PINK);
+        colour: return COLOUR_PINK;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_Y, 204) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_Y);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_YELLOW);
+        purchase: purchase_hq(2607, COLOUR_YELLOW);
+        colour: return COLOUR_YELLOW;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_r, 205) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_R);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_RED);
+        purchase: purchase_hq(2607, COLOUR_RED);
+        colour: return COLOUR_RED;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_lb, 206) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_LB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_LIGHT_BLUE);
+        purchase: purchase_hq(2607, COLOUR_LIGHT_BLUE);
+        colour: return COLOUR_LIGHT_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_g, 207) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_G);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_GREEN);
+        purchase: purchase_hq(2607, COLOUR_GREEN);
+        colour: return COLOUR_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_dg, 208) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_DG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_DARK_GREEN);
+        purchase: purchase_hq(2607, COLOUR_DARK_GREEN);
+        colour: return COLOUR_DARK_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_bl, 209) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_BL);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_BLUE);
+        purchase: purchase_hq(2607, COLOUR_BLUE);
+        colour: return COLOUR_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_c, 210) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_C);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_CREAM);
+        purchase: purchase_hq(2607, COLOUR_CREAM);
+        colour: return COLOUR_CREAM;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_m, 211) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_M);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_MAUVE);
+        purchase: purchase_hq(2607, COLOUR_MAUVE);
+        colour: return COLOUR_MAUVE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_pr, 212) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_PR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_PURPLE);
+        purchase: purchase_hq(2607, COLOUR_PURPLE);
+        colour: return COLOUR_PURPLE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_o, 213) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_O);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_ORANGE);
+        purchase: purchase_hq(2607, COLOUR_ORANGE);
+        colour: return COLOUR_ORANGE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_br, 214) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_BR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_BROWN);
+        purchase: purchase_hq(2607, COLOUR_BROWN);
+        colour: return COLOUR_BROWN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_gy, 215) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_GY);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_GREY);
+        purchase: purchase_hq(2607, COLOUR_GREY);
+        colour: return COLOUR_GREY;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_tiny_w, 216) {
+    property {
+        class:                  "HDQ1";
+        classname:              string(STR_HDQ1);
+        name:                   string(STR_NAME_HQ_TINY_W);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq(2607, COLOUR_WHITE);
+        purchase: purchase_hq(2607, COLOUR_WHITE);
+        colour: return COLOUR_WHITE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_cc, 300) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_CC);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, colour);
+        purchase: purchase_hq_med_cc(2611);
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_db, 301) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_DB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_DARK_BLUE);
+        purchase: purchase_hq_med(2611, COLOUR_DARK_BLUE);
+        colour: return COLOUR_DARK_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_pg, 302) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_PG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_PALE_GREEN);
+        purchase: purchase_hq_med(2611, COLOUR_PALE_GREEN);
+        colour: return COLOUR_PALE_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_pi, 303) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_PI);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_PINK);
+        purchase: purchase_hq_med(2611, COLOUR_PINK);
+        colour: return COLOUR_PINK;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_Y, 304) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_Y);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_YELLOW);
+        purchase: purchase_hq_med(2611, COLOUR_YELLOW);
+        colour: return COLOUR_YELLOW;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_r, 305) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_R);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_RED);
+        purchase: purchase_hq_med(2611, COLOUR_RED);
+        colour: return COLOUR_RED;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_lb, 306) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_LB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_LIGHT_BLUE);
+        purchase: purchase_hq_med(2611, COLOUR_LIGHT_BLUE);
+        colour: return COLOUR_LIGHT_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_g, 307) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_G);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_GREEN);
+        purchase: purchase_hq_med(2611, COLOUR_GREEN);
+        colour: return COLOUR_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_dg, 308) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_DG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_DARK_GREEN);
+        purchase: purchase_hq_med(2611, COLOUR_DARK_GREEN);
+        colour: return COLOUR_DARK_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_bl, 309) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_BL);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_BLUE);
+        purchase: purchase_hq_med(2611, COLOUR_BLUE);
+        colour: return COLOUR_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_c, 310) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_C);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_CREAM);
+        purchase: purchase_hq_med(2611, COLOUR_CREAM);
+        colour: return COLOUR_CREAM;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_m, 311) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_M);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_MAUVE);
+        purchase: purchase_hq_med(2611, COLOUR_MAUVE);
+        colour: return COLOUR_MAUVE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_pr, 312) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_PR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_PURPLE);
+        purchase: purchase_hq_med(2611, COLOUR_PURPLE);
+        colour: return COLOUR_PURPLE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_o, 313) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_O);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_ORANGE);
+        purchase: purchase_hq_med(2611, COLOUR_ORANGE);
+        colour: return COLOUR_ORANGE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_br, 314) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_BR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_BROWN);
+        purchase: purchase_hq_med(2611, COLOUR_BROWN);
+        colour: return COLOUR_BROWN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_gy, 315) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_GY);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_GREY);
+        purchase: purchase_hq_med(2611, COLOUR_GREY);
+        colour: return COLOUR_GREY;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_medium_w, 316) {
+    property {
+        class:                  "HDQ2";
+        classname:              string(STR_HDQ2);
+        name:                   string(STR_NAME_HQ_MEDIUM_W);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_med(2611, COLOUR_WHITE);
+        purchase: purchase_hq_med(2611, COLOUR_WHITE);
+        colour: return COLOUR_WHITE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_cc, 400) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_CC);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, colour);
+        purchase: purchase_hq_lg_cc(2618);
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_db, 401) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_DB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_DARK_BLUE);
+        purchase: purchase_hq_lg(2618, COLOUR_DARK_BLUE);
+        colour: return COLOUR_DARK_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_pg, 402) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_PG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_PALE_GREEN);
+        purchase: purchase_hq_lg(2618, COLOUR_PALE_GREEN);
+        colour: return COLOUR_PALE_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_pi, 403) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_PI);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_PINK);
+        purchase: purchase_hq_lg(2618, COLOUR_PINK);
+        colour: return COLOUR_PINK;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_Y, 404) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_Y);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_YELLOW);
+        purchase: purchase_hq_lg(2618, COLOUR_YELLOW);
+        colour: return COLOUR_YELLOW;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_r, 405) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_R);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_RED);
+        purchase: purchase_hq_lg(2618, COLOUR_RED);
+        colour: return COLOUR_RED;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_lb, 406) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_LB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_LIGHT_BLUE);
+        purchase: purchase_hq_lg(2618, COLOUR_LIGHT_BLUE);
+        colour: return COLOUR_LIGHT_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_g, 407) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_G);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_GREEN);
+        purchase: purchase_hq_lg(2618, COLOUR_GREEN);
+        colour: return COLOUR_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_dg, 408) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_DG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_DARK_GREEN);
+        purchase: purchase_hq_lg(2618, COLOUR_DARK_GREEN);
+        colour: return COLOUR_DARK_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_bl, 409) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_BL);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_BLUE);
+        purchase: purchase_hq_lg(2618, COLOUR_BLUE);
+        colour: return COLOUR_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_c, 410) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_C);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_CREAM);
+        purchase: purchase_hq_lg(2618, COLOUR_CREAM);
+        colour: return COLOUR_CREAM;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_m, 411) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_M);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_MAUVE);
+        purchase: purchase_hq_lg(2618, COLOUR_MAUVE);
+        colour: return COLOUR_MAUVE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_pr, 412) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_PR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_PURPLE);
+        purchase: purchase_hq_lg(2618, COLOUR_PURPLE);
+        colour: return COLOUR_PURPLE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_o, 413) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_O);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_ORANGE);
+        purchase: purchase_hq_lg(2618, COLOUR_ORANGE);
+        colour: return COLOUR_ORANGE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_br, 414) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_BR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_BROWN);
+        purchase: purchase_hq_lg(2618, COLOUR_BROWN);
+        colour: return COLOUR_BROWN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_gy, 415) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_GY);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_GREY);
+        purchase: purchase_hq_lg(2618, COLOUR_GREY);
+        colour: return COLOUR_GREY;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_large_w, 416) {
+    property {
+        class:                  "HDQ3";
+        classname:              string(STR_HDQ3);
+        name:                   string(STR_NAME_HQ_LARGE_W);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_lg(2618, COLOUR_WHITE);
+        purchase: purchase_hq_lg(2618, COLOUR_WHITE);
+        colour: return COLOUR_WHITE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_cc, 500) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_CC);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, colour);
+        purchase: purchase_hq_xl_cc(2625);
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_db, 501) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_DB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_DARK_BLUE);
+        purchase: purchase_hq_xl(2625, COLOUR_DARK_BLUE);
+        colour: return COLOUR_DARK_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_pg, 502) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_PG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_PALE_GREEN);
+        purchase: purchase_hq_xl(2625, COLOUR_PALE_GREEN);
+        colour: return COLOUR_PALE_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_pi, 503) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_PI);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_PINK);
+        purchase: purchase_hq_xl(2625, COLOUR_PINK);
+        colour: return COLOUR_PINK;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_Y, 504) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_Y);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_YELLOW);
+        purchase: purchase_hq_xl(2625, COLOUR_YELLOW);
+        colour: return COLOUR_YELLOW;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_r, 505) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_R);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_RED);
+        purchase: purchase_hq_xl(2625, COLOUR_RED);
+        colour: return COLOUR_RED;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_lb, 506) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_LB);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_LIGHT_BLUE);
+        purchase: purchase_hq_xl(2625, COLOUR_LIGHT_BLUE);
+        colour: return COLOUR_LIGHT_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_g, 507) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_G);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_GREEN);
+        purchase: purchase_hq_xl(2625, COLOUR_GREEN);
+        colour: return COLOUR_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_dg, 508) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_DG);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_DARK_GREEN);
+        purchase: purchase_hq_xl(2625, COLOUR_DARK_GREEN);
+        colour: return COLOUR_DARK_GREEN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_bl, 509) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_BL);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_BLUE);
+        purchase: purchase_hq_xl(2625, COLOUR_BLUE);
+        colour: return COLOUR_BLUE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_c, 510) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_C);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_CREAM);
+        purchase: purchase_hq_xl(2625, COLOUR_CREAM);
+        colour: return COLOUR_CREAM;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_m, 511) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_M);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_MAUVE);
+        purchase: purchase_hq_xl(2625, COLOUR_MAUVE);
+        colour: return COLOUR_MAUVE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_pr, 512) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_PR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_PURPLE);
+        purchase: purchase_hq_xl(2625, COLOUR_PURPLE);
+        colour: return COLOUR_PURPLE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_o, 513) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_O);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_ORANGE);
+        purchase: purchase_hq_xl(2625, COLOUR_ORANGE);
+        colour: return COLOUR_ORANGE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_br, 514) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_BR);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_BROWN);
+        purchase: purchase_hq_xl(2625, COLOUR_BROWN);
+        colour: return COLOUR_BROWN;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_gy, 515) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_GY);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_GREY);
+        purchase: purchase_hq_xl(2625, COLOUR_GREY);
+        colour: return COLOUR_GREY;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}
+item(FEAT_OBJECTS, hq_huge_w, 516) {
+    property {
+        class:                  "HDQ4";
+        classname:              string(STR_HDQ4);
+        name:                   string(STR_NAME_HQ_HUGE_W);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    
+        default: graphics_hq_xl(2625, COLOUR_WHITE);
+        purchase: purchase_hq_xl(2625, COLOUR_WHITE);
+        colour: return COLOUR_WHITE;
+    
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}

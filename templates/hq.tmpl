@@ -1,0 +1,29 @@
+{{ $size := ""}}{{ if .size }}{{ $size = concat "_" .size }}{{end -}}
+item(FEAT_OBJECTS, {{.id}}, {{.numeric_id}}) {
+    property {
+        class:                  "{{.class}}";
+        classname:              string(STR_{{.class}});
+        name:                   {{.name_string}};
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  2;
+        remove_cost_multiplier: 8;
+        introduction_date:      0;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_REMOVE_IS_INCOME, OBJ_FLAG_ALLOW_BRIDGE);
+        height:                 2;
+        num_views:              1;
+        count_per_map256:       0;
+    }
+    graphics {
+    {{if .colour}}
+        default: graphics_hq{{$size}}({{.base_sprite}}, {{.colour}});
+        purchase: purchase_hq{{$size}}({{.base_sprite}}, {{.colour}});
+        colour: return {{.colour}};
+    {{else}}
+        default: graphics_hq{{$size}}({{.base_sprite}}, colour);
+        purchase: purchase_hq{{$size}}_cc({{.base_sprite}});
+    {{end}}
+        autoslope: return CB_RESULT_AUTOSLOPE;
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "grf": {
+        "author_id": "WFY",
+        "grf_id": 72,
+        "name": "Headquarters as Objects 1.0",
+        "description": "Adds all the possible headquarters objects from your current base set as placeable objects, in any company colour.",
+        "url": "https://github.com/WolfieFox/hqs_as_objects",
+        "min_compat_version": 0,
+        "filename": "hq_as_objects.nml",
+        "language": "english", 
+        "parameters": []
+    },
+    "static_templates": [
+        {
+            "template":  "templates/static/hq_gfx.nml"
+        }
+    ],
+    "sprites": {
+        "table": "table.csv",
+        "template_directory": "templates"
+    },
+    "fixed_strings": {
+        "STR_HDQ0": "Base Headquarters",
+        "STR_HDQ1": "Small Headquarters",
+        "STR_HDQ2": "Medium Headquarters",
+        "STR_HDQ3": "Large Headquarters",
+        "STR_HDQ4": "Huge Headquarters"
+    }
+}
